@@ -1,0 +1,32 @@
+[user]
+    name = fromtheeast710
+    email = theeast710@proton.me
+[init]
+  	defaultbranch = main
+[credential]
+    helper = cache --timeout 600
+    useHttpPath = true
+[credential "https://github.com"]
+  	helper=
+  	helper=!gh auth git-credential
+[credential "https://gist.github.com"]
+  	helper=
+  	helper=!gh auth git-credential
+[alias]
+    logs = log --pretty=format:\"%Cgreen%h%Creset - %Cblue%an%Creset @ %ar : %s\"
+    tree = log --graph --pretty="\\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\\'" --all
+[core]
+    editor = hx
+[pull]
+    rebase = true
+[push]
+    default = current
+[merge]
+  	conflictstyle = diff3
+[diff]
+  colorMoved = default
+  tool = difftastic
+[difftool]
+  prompt = false
+[difftool "difftastic"]
+  	cmd = difft "$LOCAL" "$REMOTE"
